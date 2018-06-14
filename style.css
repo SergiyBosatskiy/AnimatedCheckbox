@@ -1,0 +1,119 @@
+.container {
+	width: 500px;
+	margin: 40px auto;
+}
+
+.checkbox {
+	margin: 10px 0;
+}
+
+.checkbox label {
+	cursor: pointer;
+	position: relative;
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+.checkbox label::after {
+	content: '';
+	position: absolute;
+	width: 21px;
+	height: 21px;
+	border: 2px solid black;
+	top: 0;
+	left: -35px; 
+}
+
+.checkbox input[type='checkbox'] {
+	display: none;
+}
+
+.checkbox svg.test-checked {
+	
+	width: 0px;
+	height: 0px;
+	
+}
+
+@keyframes dash-checkbox {
+            from {
+                stroke-dashoffset: 937;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+.checkbox input[type='checkbox']:checked + label svg.test-checked {
+	width: 26px;
+	height: 26px;
+	stroke-dasharray: 937;
+	stroke-dashoffset: 0;
+	position: absolute;
+	left: -36px;
+	top: -4px;
+	z-index: 1;
+	animation: dash-checkbox .5s linear;
+
+}
+
+.radio {
+	margin: 20px 0;
+}
+
+.radio label {
+	cursor: pointer;
+	position: relative;
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+.radio input[type='radio'] {
+	display: none;
+}
+
+.radio label::after {
+	content: '';
+	width: 21px;
+	height: 21px;
+	border: 2px solid gray;
+	border-radius: 50%;
+	position: absolute;
+	left: -35px;
+	top: 0;
+}
+
+.radio svg.test-radio {
+	width: 0;
+	height: 0;
+}
+
+.radio input[type='radio']:checked + label svg.test-radio {
+	width: 30px;
+	height: 30px;
+	stroke-dasharray: 104.77;
+	stroke-dashoffset: 0;
+	position: absolute;
+	left: -38px;
+	top: -3px;
+	z-index: 1;
+	animation: dash-radio 0.2s linear;
+}
+
+@keyframes dash-radio {
+            from {
+                stroke-dashoffset: 104.77;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+.radio input[type='radio']:checked + label::after {
+	width: 11px;
+	height: 11px;
+	border: 1px solid grey;
+	left: -30px;
+	top: 7px;
+	background-color: #d3d3d3;
+}
